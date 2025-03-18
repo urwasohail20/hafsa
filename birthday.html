@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday Hafsa!</title>
+    <style>
+        body {
+            text-align: center;
+            background-color: #e65a89;
+            font-family: Arial, sans-serif;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 3rem;
+            color: rgb(128, 5, 26);
+            margin-top: 5vh;
+            animation: bounce 1.5s infinite alternate;
+        }
+
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+
+            to {
+                transform: translateY(-20px);
+            }
+        }
+
+        .button {
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            background-color: rgb(61, 4, 14);
+            color: white;
+            border: none;
+            cursor: pointer;
+            border-radius: 10px;
+            transition: 0.3s;
+            margin-top: 15px;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: rgb(247, 158, 173);
+        }
+
+        .balloons {
+            position: absolute;
+            width: 40px;
+            height: 60px;
+            background-color: rgb(61, 4, 14);
+            border-radius: 50%;
+            bottom: -100px;
+            animation: float 5s linear infinite;
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh);
+                opacity: 0;
+            }
+        }
+
+        .wishes {
+            font-size: 1.5rem;
+            color: rgb(46, 7, 14);
+            margin-top: 20px;
+            display: none;
+            animation: fadeIn 2s;
+            max-width: 90%;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+
+            .button {
+                font-size: 1rem;
+                padding: 10px 20px;
+            }
+
+            .wishes {
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Happy Birthday Hafsa! 🎉🎂</h1>
+    <button class="button" onclick="showMessage()">Click for a Surprise</button>
+    <div id="message" class="wishes">
+        <p>🎉 Wishing you an amazing birthday, Hafsa! 🎂</p>
+        <p>So Miss Hafsa Fatima, I can't even explain how important you are in my life. No one can ever take your place.
+            You always support me in everything I do, in every situation. You are truly the most amazing person I have
+            ever met.
+            <br>
+            Yaar, I love you soooo much! No matter what happens in life, no matter what the situation is, I will never
+            leave your side, InshaAllah. We became friends, and we will always stay true to this friendship, InshaAllah.
+            <br>
+            I love you the most 💖!
+            <br>
+            Happy Birthday once again! 🎉❤️
+            <br>
+            <a class="button" href="cards.html">Click here for another Surprise</a>
+        </p>
+    </div>
+    <script>
+        function showMessage() {
+            document.getElementById("message").style.display = "block";
+            for (let i = 0; i < 30; i++) {
+                let balloon = document.createElement("div");
+                balloon.className = "balloons";
+                balloon.style.left = Math.random() * 100 + "vw";
+                balloon.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+                balloon.style.animationDuration = (Math.random() * 3 + 3) + "s";
+                document.body.appendChild(balloon);
+                setTimeout(() => balloon.remove(), 5000);
+            }
+        }
+    </script>
+</body>
+
+</html>
